@@ -162,7 +162,7 @@ fun BillForm(
         mutableStateOf(0f)
     }
 
-    val tipPercentage = (sliderPositionState.value * 100).toInt()
+    var tipPercentage = (sliderPositionState.value * 100).toInt()
 
     TopHeader(totalPerPerson = totalPerPersonState.value)
 
@@ -280,6 +280,7 @@ fun BillForm(
                         value = sliderPositionState.value,
                         onValueChange = { newVal ->
                             sliderPositionState.value = newVal
+                            tipPercentage = (sliderPositionState.value * 100).toInt()
                             tipAmountState.value =
                                 calculateTotalTip(
                                     totalBill = totalBillState.value.toDouble(),
@@ -293,7 +294,7 @@ fun BillForm(
                                 )
                         },
                         modifier = Modifier.padding(start = 16.dp, end = 16.dp),
-                        steps = 10,
+//                        steps = 10,
                         onValueChangeFinished = {
 
                         })
