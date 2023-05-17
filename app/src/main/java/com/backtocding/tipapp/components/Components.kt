@@ -1,14 +1,11 @@
 package com.backtocding.tipapp.components
 
-import android.graphics.drawable.Icon
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.AccountBox
-import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Clear
-import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -39,7 +36,7 @@ fun InputField(
         leadingIcon = { Icon(imageVector = Icons.Rounded.Clear, contentDescription = "Money Icon") },
         singleLine = isSingleLine,
         textStyle = TextStyle(fontSize = 18.sp, color = MaterialTheme.colorScheme.onBackground),
-        modifier = modifier.padding(bottom = 10.dp, start = 10.dp, end = 10.dp),
+        modifier = modifier.padding(bottom = 10.dp, start = 10.dp, end = 10.dp).fillMaxWidth(),
         enabled = enabled,
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
         keyboardActions = onAction
